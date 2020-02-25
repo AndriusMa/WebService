@@ -1,6 +1,6 @@
 To build: docker-compose up --build -d
 
-To run: docker run -it -d -p 5000:5000 *directory*_web
+To run: docker run -it -d -p 5000:5000 (your_directory)_web
 
 Service can be reached at /cars .
 
