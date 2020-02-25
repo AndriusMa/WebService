@@ -68,7 +68,10 @@ class CarById(Resource):
         self.parser.add_argument('insurance', type=str, required=True, location='json', help="Insurance status must be provided")
 
     def get(self, id):
-        return Cars[id], 200
+        if id not in Cars:
+            return "No car found by provided id", 404
+        else:
+            return Cars[id], 200
     
     def post(self, id):
         return "Posting is not allowed on this page", 400
