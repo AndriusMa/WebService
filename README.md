@@ -14,4 +14,4 @@ This service can:
 
 -Update a car
 
-If you want to reach a specific car, use /cars/<carId>
+If you want to reach a specific car, use /cars/*car_number*
