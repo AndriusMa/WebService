@@ -13,3 +13,5 @@ This service can:
 -Get car list
 
 -Update a car
+
+If you want to reach a specific car, use /cars/<carId>
