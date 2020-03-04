@@ -2,7 +2,7 @@
 Car insurance service
 Car (/car/<str:CarId>) ?
 """
-from flask import Flask
+from flask import Flask, jsonify
 from flask_restful import Resource, Api, reqparse
 
 app = Flask(__name__)
@@ -33,7 +33,7 @@ class Car(Resource):
         for car in Cars.values():
             allCars.append(car)
         if len(allCars) is 0:
-            return "List is empty", 201
+            return {'Success': "Returned empty list"}, 200
         else:
             return allCars, 200
     
@@ -50,17 +50,17 @@ class Car(Resource):
         }
         if args['vin'] in vinArray:
             keyCounter -= 1
-            return "vin number must be unique to the car", 400
+            return {'Error': "vin number must be unique to the car"}, 400
         else:
             Cars[newCar['id']] = newCar
             vinArray.append(newCar['vin'])
-            return "Succesfully posted car with id: " + str(keyCounter), 201
+            return {'Success': "posted a car"}, 201, {'Posted to': "cars/" + str(keyCounter)}
 
     def put(self):
-        return "Update is not allowed on this page", 400
+        return {'Error': "Update is not allowed on this page"}, 405
 
     def delete(self):
-        return "Delete is not allowed on this page", 400
+        return {'Error': "Delete is not allowed on this page"}, 405
 
 class CarById(Resource):
     def __init__(self):
@@ -72,16 +72,16 @@ class CarById(Resource):
 
     def get(self, id):
         if id not in Cars:
-            return "No car found by provided id", 404
+            return {'Error': "No car found by provided id"}, 404
         else:
             return Cars[id], 200
     
     def post(self, id):
-        return "Posting is not allowed on this page", 400
+        return {'Error': "Posting is not allowed on this page"}, 405
 
     def put(self, id):
         if id not in Cars:
-            return "Wrong car id provided", 404
+            return {'Error': "Wrong car id provided"}, 400
         else:
             args = self.parser.parse_args()
             tempVin = Cars[id].get('vin')
@@ -94,18 +94,18 @@ class CarById(Resource):
             'insurance':args['insurance']
             }
             if args['vin'] in vinArray:
-                return "vin number must be unique to the car", 400
+                return {'Error': "vin number must be unique to the car"}, 400
             else:
                 Cars[id] = updateCar
                 vinArray.append(updateCar['vin'])
-                return "Succesfully updated car with id: " + str(id), 200
+                return {'Success': "updated car"}, 200,  {'Updated at': "cars/" + str(id)}
 
     def delete(self, id):
         if id not in Cars:
-            return "Wrong car id provided", 404
+            return {'Error': "Wrong car id provided"}, 400
         else:
             Cars.pop(id)
-            return "Succesfully deleted car with id: " + str(id), 200
+            return {'Success': "deleted car"}, 200, {'Deleted at': "cars/" + str(id)}
 
 
 class Home(Resource):
