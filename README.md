@@ -1,4 +1,6 @@
-To build: docker-compose up --build -d
+To build for first time: docker-compose up --build -d
+
+To build after first time: docker build -t *your container name*
 
 To run: docker run -it (your_directory)_web
 
