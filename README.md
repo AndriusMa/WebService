@@ -1,8 +1,8 @@
 To build for first time: docker-compose up --build -d
 
-To build after first time: docker build -t *your container name*
+To build after first time: docker build -t *your_container_name*
 
-To run: docker run -it (your_directory)_web
+To run: docker run -it *your_directory*_web
 
 Service can be reached at /cars .
 
