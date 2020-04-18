@@ -8,17 +8,17 @@ Possibilities:
 
 
 Build and start:  
--./run.sh
+- ./run.sh
 
 Stop:
--./stop.sh
+- ./stop.sh
 
 
 location:
--localhost:80
+- localhost:80
 
 You can reach the service in: 
--/cars/movies
--/cars
--/cars/<car_id>
--/cars/<car_id>/movies
+- /cars/movies
+- /cars
+- /cars/<car_id>
+- /cars/<car_id>/movies
