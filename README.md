@@ -8,13 +8,19 @@ Possibilities:
 
 
 
-Build and start:  ```./run.sh
+Build and start:  ./run.sh
 
-Stop:             ``./stop.sh
+Stop:             ./stop.sh
 
 
+location: localhost:80
 
-```localhost:80/cars/movies
-               /cars/<car_id>/movies
-               /cars
+You can reach the service in: 
 
+/cars/movies
+
+/cars
+
+/cars/<car_id>
+
+/cars/<car_id>/movies
