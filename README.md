@@ -7,20 +7,18 @@ Possibilities:
 - Delete a record of car that is starring in movie or movies
 
 
+Build and start:  
+-./run.sh
 
-Build and start:  ./run.sh
+Stop:
+-./stop.sh
 
-Stop:             ./stop.sh
 
-
-location: localhost:80
+location:
+-localhost:80
 
 You can reach the service in: 
-
-/cars/movies
-
-/cars
-
-/cars/<car_id>
-
-/cars/<car_id>/movies
+-/cars/movies
+-/cars
+-/cars/<car_id>
+-/cars/<car_id>/movies
