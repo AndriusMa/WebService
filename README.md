@@ -8,18 +8,13 @@ Possibilities:
 
 
 
-Build and start:  ./run.sh
+Build and start:  ```./run.sh
 
-Stop:             ./stop.sh
+Stop:             ``./stop.sh
 
 
 
-View:  localhost:80/<PATH>
-         
-         
-<PATH> = /cars/movies
-         
-         /cars/<car_id>/movies
-         
-         /cars
+```localhost:80/cars/movies
+               /cars/<car_id>/movies
+               /cars
 
