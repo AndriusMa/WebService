@@ -1,13 +1,15 @@
-# Cinema WebService
+# Car Movies WebService
 
 Possibilities:
-- Get all records of the movies that are currently shown at the theatre
-- Create a record for a movie to be shown at the theatre
-- Update information about the movie that is shown at the theatre
-- Delete a record of movie that is shown at the theatre (movie is out of programme of the theatre)
+- Get all records of the cars that starred in all or one movie that are currently shown at the theatre
+- Create a record for a car that is starring in movie or movies
+- Update information about the car that is starring in movie or movies
+- Delete a record of car that is starring in movie or movies
 
-Build: docker-compose up --build -d
+Build and start:  ./run.sh
+Stop:             ./stop.sh
 
-Run:   docker run -it (directory)_web 
-
-View:  localhost:5000/movies
+View:  localhost:80/<PATH>
+<PATH> = /cars/movies
+         /cars/<car_id>/movies
+         /cars
