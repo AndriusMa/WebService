@@ -50,7 +50,7 @@ class CarById(Resource):
                 duplicates = []
                 for movie_id in movie_ids:
                     try:                  
-                        movies[int(movie_id)].get('movie_id')
+                        movies[int(movie_id)].get('id')
                         for duplicate in duplicates:
                             if duplicate == int(movie_id):
                                 return "Movie duplicates found in provided json", 400
