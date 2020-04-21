@@ -10,7 +10,7 @@ class AllCarMovies(Resource):
         
         for movie in movieArray:
             serviceResponse = DannoService().get_movie(movie)
-            if serviceResponse is not "Movie service is down":
+            if serviceResponse != 503:
                 movieDescriptions.append(serviceResponse)
             else:
                 return "Movie service is down", 503

@@ -35,9 +35,11 @@ class CarById(Resource):
             'movies':args['movies']
             }
             if args['vin'] in vinArray:
+                vinArray.append(tempVin)
                 return "vin number must be unique to the car", 400
             
             elif args['movies'] == "":
+                vinArray.append(tempVin)
                 return "At least one movie must be provided", 400
 
             else:
@@ -45,6 +47,7 @@ class CarById(Resource):
                 movies = DannoService().get_all_movies()
                 
                 if movies == "Movie service is down":
+                    vinArray.append(tempVin)
                     return "Movie service is down", 503
 
                 duplicates = []

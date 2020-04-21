@@ -29,4 +29,4 @@ class DannoService:
             return movie
 
         except requests.exceptions.RequestException as e:
-            return "Movie service is down" 
+            return "Movie service is down"
