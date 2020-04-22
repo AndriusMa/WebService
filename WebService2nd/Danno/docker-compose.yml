@@ -3,13 +3,3 @@ networks:
     default:
         external:
             name: ws_bridge
-
-services:
-    web:
-        build: .
-        command: python cinema.py
-        ports:
-            - "5005:5005"
-        volumes:
-            - .:/app
-        container_name: danno_service
